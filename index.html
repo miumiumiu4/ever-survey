@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>講座の感想アンケート｜エアコン清掃 独立準備講座</title>
+<style>
+  :root { --bg:#F5F7FA; --card:#FFFFFF; --ink:#1B2433; --sub:#5B6676; --line:#D8DEE6; --navy:#1F3A5F; --accent:#E8833A; --sel:#EEF2F7; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12161C; --card:#1B222C; --ink:#E8ECF1; --sub:#9AA6B5; --line:#2E3846; --navy:#8FB3E0; --accent:#F0A060; --sel:#243142; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:"Hiragino Sans","Noto Sans JP",sans-serif; font-size:16px; line-height:1.7; }
+  main { max-width:640px; margin:0 auto; padding:24px 16px 60px; }
+  h1 { font-size:20px; color:var(--navy); margin:0 0 4px; }
+  .lead { color:var(--sub); font-size:14px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-top:16px; }
+  section h2 { font-size:15px; color:var(--navy); margin:0 0 4px; }
+  .q { margin-top:18px; }
+  .q:first-of-type { margin-top:8px; }
+  .q > label.t, .q > .t { display:block; font-weight:600; font-size:15px; }
+  .hint { color:var(--sub); font-size:13px; }
+  .opts { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .opts label { display:flex; align-items:center; gap:6px; border:1px solid var(--line); border-radius:8px; padding:8px 12px; cursor:pointer; font-size:15px; }
+  .opts input { accent-color: var(--accent); }
+  .opts label:has(input:checked) { background:var(--sel); border-color:var(--navy); }
+  .scale { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin-top:8px; }
+  .scale.s11 { grid-template-columns:repeat(11,1fr); }
+  .scale label { text-align:center; border:1px solid var(--line); border-radius:8px; padding:8px 0; cursor:pointer; }
+  .scale input { display:none; }
+  .scale label:has(input:checked) { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .ends { display:flex; justify-content:space-between; color:var(--sub); font-size:12px; margin-top:2px; }
+  textarea, input[type=email] { width:100%; margin-top:8px; padding:10px; border:1px solid var(--line); border-radius:8px; background:transparent; color:var(--ink); font-size:16px; font-family:inherit; }
+  textarea { min-height:90px; }
+  button { margin-top:24px; width:100%; padding:14px; border:0; border-radius:10px; background:var(--accent); color:#fff; font-size:17px; font-weight:700; cursor:pointer; }
+  button:disabled { opacity:.6; }
+  .note { color:var(--sub); font-size:12px; margin-top:16px; }
+  .done { text-align:center; padding:40px 16px; }
+  .err { color:#C94F6D; font-size:14px; margin-top:8px; }
+</style>
+</head>
+<body>
+<main>
+  <form id="f" novalidate>
+    <h1>講座の感想アンケート</h1>
+    <p class="lead">エアコン清掃 独立準備講座を受けていただき、ありがとうございます。<br>3分ほどで答えられます。いただいた声は、講座をよくするために使わせていただきます。</p>
+
+    <section>
+      <h2>講座について</h2>
+      <div class="q"><span class="t">講座の満足度を教えてください</span>
+        <div class="scale" data-name="satisfaction"></div><div class="ends"><span>不満</span><span>とても満足</span></div></div>
+
+      <div class="q"><span class="t">どこまで見ましたか</span>
+        <div class="opts" data-name="progress" data-type="radio" data-opts="全7回、最後まで|第4〜6回まで|第1〜3回まで|まだ見ていない"></div></div>
+
+      <div class="q"><span class="t">いちばん役に立った回は？</span>
+        <div class="opts" data-name="best_lesson" data-type="radio" data-opts="第1回|第2回|第3回|第4回|第5回|第6回|第7回"></div></div>
+
+      <div class="q"><label class="t" for="best_reason">役に立った理由を、ひとことで</label>
+        <textarea id="best_reason" name="best_reason" placeholder="例：止まっていた理由に名前がついて、動けるようになった"></textarea></div>
+
+      <div class="q"><label class="t" for="missing">分かりにくかったところ、物足りなかったところ</label>
+        <textarea id="missing" name="missing" placeholder="なければ空欄で大丈夫です"></textarea></div>
+
+      <div class="q"><span class="t">個別ロードマップ作成会は？</span>
+        <div class="opts" data-name="session" data-type="radio" data-opts="受けた|予約した|これから予約する|受けない"></div></div>
+    </section>
+
+    <section>
+      <h2>あなたの今</h2>
+      <div class="q"><span class="t">講座を受ける前、独立に向けて「動ける」気持ちはどれくらいでしたか</span>
+        <div class="scale" data-name="before"></div><div class="ends"><span>まったく動けない</span><span>すぐ動ける</span></div></div>
+
+      <div class="q"><span class="t">今は、どれくらいですか</span>
+        <div class="scale" data-name="after"></div><div class="ends"><span>まったく動けない</span><span>すぐ動ける</span></div></div>
+
+      <div class="q"><span class="t">今のあなたに、いちばん近いものは？</span>
+        <div class="opts" data-name="stage" data-type="radio" data-opts="まだ考えている|独立の時期を決めた|準備を始めた|もう独立している"></div></div>
+
+      <div class="q"><span class="t">独立を考えている時期は？</span>
+        <div class="opts" data-name="timing" data-type="radio" data-opts="半年以内|1年以内|2〜3年以内|まだ決めていない|もう独立している"></div></div>
+
+      <div class="q"><span class="t">今いちばんの不安は？（いくつでも）</span>
+        <div class="opts" data-name="worry" data-type="checkbox" data-opts="お金|時期|技術|集客|家族の理解|一人でやっていけるか|人を雇うこと|特にない"></div></div>
+    </section>
+
+    <section>
+      <h2>これから</h2>
+      <div class="q"><span class="t">次に、もっと知りたい・学びたいことは？（いくつでも）</span>
+        <div class="opts" data-name="next_learn" data-type="checkbox" data-opts="集客と口コミの続き|人を雇う・任せる|お金・融資・資金計画|技術を見て学ぶ|毎日聞ける音声で、気持ちを保つ|同じ目標の仲間と話す場|ほかの人の実例をもっと"></div></div>
+
+      <div class="q"><span class="t">この講座の続きを、毎日少しずつ聞ける「音声プログラム」があったら？</span>
+        <div class="opts" data-name="next_audio" data-type="radio" data-opts="ぜひ受けたい|内容次第で受けたい|今はいらない"></div></div>
+
+      <div class="q"><span class="t">独立の準備を、もっと深く学べる上位の講座があったら？</span>
+        <div class="opts" data-name="next_course" data-type="radio" data-opts="ぜひ受けたい|内容次第で受けたい|今はいらない"></div></div>
+
+      <div class="q"><span class="t">ありがとうグループへの加盟について、話を聞いてみたいですか</span>
+        <div class="hint">無理におすすめすることはありません。今のお気持ちを教えてください。</div>
+        <div class="opts" data-name="franchise" data-type="radio" data-opts="話を聞いてみたい|少し興味がある|今はいい|もう聞いた"></div></div>
+
+      <div class="q"><span class="t">この講座を、独立を考えている知り合いにすすめたいですか</span>
+        <div class="scale s11" data-name="nps" data-min="0" data-max="10"></div><div class="ends"><span>すすめない</span><span>ぜひすすめたい</span></div></div>
+    </section>
+
+    <section>
+      <h2>感想</h2>
+      <div class="q"><label class="t" for="comment">講座の感想を、自由に書いてください</label>
+        <textarea id="comment" name="comment"></textarea></div>
+
+      <div class="q"><span class="t">いただいた感想を、お名前を伏せて紹介してもよいですか</span>
+        <div class="hint">チェックがない方の感想を、外に出すことはありません。</div>
+        <div class="opts" data-name="share" data-type="radio" data-opts="名前を伏せて紹介OK|紹介しないでほしい"></div></div>
+
+      <div class="q"><label class="t" for="mail">講座をお申し込みいただいたメールアドレス（任意）</label>
+        <div class="hint">同じ方の回答をまとめるためだけに使います。</div>
+        <input type="email" id="mail" name="mail" autocomplete="email" inputmode="email"></div>
+    </section>
+
+    <button type="submit" id="send">送信する</button>
+    <div class="err" id="err" hidden></div>
+    <p class="note">運営：エイムポイント合同会社（ありがとうグループ）／お問い合わせ：info@arigatouosouji.com</p>
+  </form>
+  <div class="done" id="done" hidden>
+    <h1>ありがとうございました</h1>
+    <p>いただいた声は、講座をよくするために大切に使わせていただきます。</p>
+    <p>あなたの一歩目を、応援しています。<br>三浦</p>
+  </div>
+</main>
+<script src="config.js"></script>
+<script>
+document.querySelectorAll('.opts').forEach(el => {
+  const name = el.dataset.name, type = el.dataset.type;
+  el.innerHTML = el.dataset.opts.split('|').map(o => `<label><input type="${type}" name="${name}" value="${o}">${o}</label>`).join('');
+});
+document.querySelectorAll('.scale').forEach(el => {
+  const name = el.dataset.name, min = Number(el.dataset.min || 1), max = Number(el.dataset.max || 5);
+  let h = ''; for (let i = min; i <= max; i++) h += `<label><input type="radio" name="${name}" value="${i}">${i}</label>`;
+  el.innerHTML = h;
+});
+document.getElementById('f').addEventListener('submit', async ev => {
+  ev.preventDefault();
+  const f = ev.target, err = document.getElementById('err'), btn = document.getElementById('send');
+  const fd = new FormData(f);
+  if (!fd.get('satisfaction')) { err.textContent = '「講座の満足度」だけは選んでください。'; err.hidden = false; return; }
+  const p = new URLSearchParams();
+  p.set('type', 'survey'); p.set('key', window.SURVEY_KEY); p.set('page', location.pathname);
+  ['satisfaction','progress','best_lesson','best_reason','missing','session','before','after','stage','timing','next_audio','next_course','franchise','nps','comment','share','mail']
+    .forEach(k => p.set(k, (fd.get(k) || '').toString()));
+  ['worry','next_learn'].forEach(k => p.set(k, fd.getAll(k).join('、')));
+  btn.disabled = true; btn.textContent = '送信しています…'; err.hidden = true;
+  try {
+    await fetch(window.RECEIVER_URL, { method: 'POST', mode: 'no-cors', body: p });
+    f.hidden = true; document.getElementById('done').hidden = false; window.scrollTo(0, 0);
+  } catch (e) {
+    btn.disabled = false; btn.textContent = '送信する';
+    err.textContent = '送信できませんでした。通信の状態を確かめて、もう一度お試しください。'; err.hidden = false;
+  }
+});
+</script>
+</body>
+</html>
